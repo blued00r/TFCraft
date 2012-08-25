@@ -165,13 +165,13 @@ public class EntityAnimalTFC extends EntityAnimal
 		}
 
 
-		if(pregnant){
+		/*if(pregnant){
 			if(TFCSeasons.getTotalTicks() >= conception + pregnancyTime*TFCSettings.dayLength){
 				EntityAnimalTFC baby = new EntityAnimalTFC(worldObj, this,mateSizeMod);
 				giveBirth(baby);
 				pregnant = false;
 			}
-		}
+		}*/
 
 		if (this.getGrowingAge() != 0)
 		{
