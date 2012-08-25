@@ -141,6 +141,10 @@ public class EntityAnimalTFC extends EntityAnimal
 		{
 			hunger = 168000;
 		}
+		if (hunger > 0)
+		{
+			hunger--;
+		}
 		/**
 		 * This Cancels out the growingAge from EntityAgeable
 		 * */
