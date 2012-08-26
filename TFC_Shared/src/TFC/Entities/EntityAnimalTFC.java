@@ -354,7 +354,9 @@ public class EntityAnimalTFC extends EntityAnimal
 				Entity k = (Entity) worldObj.loadedEntityList.get (j);
 				if (k instanceof EntityAnimalTFC)
 				{
-					if (((EntityAnimalTFC)k).animalID == ((EntityAnimalTFC) k).animalID)
+					long i = par1NBTTagCompound.getLong ("Child"+m);
+					m++;
+					if (i == ((EntityAnimalTFC) k).animalID)
 					{
 						children.add((EntityAnimalTFC)k);
 					}
