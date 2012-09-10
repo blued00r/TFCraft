@@ -255,7 +255,7 @@ public class EntityWolfTFC extends EntityTameableTFC
 		{
 			this.numTicksToChaseTarget = 10;
 		}
-		if (!isAngry() && getOwner() != null){
+		if (!isAngry()){
 			float f = 8F;
 			List list = worldObj.getEntitiesWithinAABB (EntityPlayer.class, boundingBox.expand (f, f, f));
 			boolean target = false;
@@ -266,12 +266,14 @@ public class EntityWolfTFC extends EntityTameableTFC
 
 				if (entity instanceof EntityPlayer)
 				{
+					if (getOwner() == null || ((EntityPlayer)entity).username.equals("Crysyn")){
 					target = true;
 					if(rand.nextInt(20) == 0){
 						this.worldObj.playSoundAtEntity(this, "mob.wolf.growl", this.getSoundVolume(), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 					}
 					if (warning == -121){
 						warning = TFCSeasons.getTotalTicks();
+					}
 					}
 					//getLookHelper().setLookPosition(entity.posX, entity.posY + (double)entity.getEyeHeight(), entity.posZ, 10.0F, (float)getVerticalFaceSpeed());
 				}
